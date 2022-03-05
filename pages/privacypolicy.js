@@ -210,7 +210,7 @@ function PrivacyPolicy() {
 <h1>Contact Us</h1>
 <p>If you have any questions about this Privacy Policy, You can contact us:</p>
 <ul>
-<li>By email: askthesigma@gmail.com</li>
+<li>By email: askthesigma@gmail.com / pushpendu ghosh</li>
 </ul>
         </div>
       <Footer></Footer>

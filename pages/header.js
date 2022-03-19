@@ -14,7 +14,7 @@ function Header(props) {
     }
 
     const getProfile = async (_id) => {
-       const response = await axios.get('http://localhost:3000/api/users?_id='+_id);
+       const response = await axios.get('/api/users?_id='+_id);
        console.log(response.data.data)
        setUser(response.data.data?response.data.data:null)
     }

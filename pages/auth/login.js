@@ -38,7 +38,7 @@ function Login() {
 
     /**  Authenticate using google and mongodb  **/
     const authenticate = async (data) => {
-      const response = await axios.post('http://localhost:3000/api/users', data);
+      const response = await axios.post('/api/users', data);
       console.log(response.data.data._id)
       sessionStorage.setItem("_id",response.data.data._id);
       gotoHome();

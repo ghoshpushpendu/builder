@@ -15,7 +15,9 @@ function Login() {
 
     const responseGoogle = (response) => {
       console.log(response);
-      authenticate(response)
+      if(!response.error){
+          authenticate(response)
+      }
       completeLoadingBar();
     }
 
@@ -33,14 +35,18 @@ function Login() {
 
       useEffect(() => {
         // Update the document title using the browser API
-        startLoadingBar()
+         startLoadingBar()
+         console.log(localStorage.getItem("_id") === null,"ID")
+         if(localStorage.getItem("_id") != undefined && localStorage.getItem("_id") != null){
+           gotoHome()
+         }
       });
 
     /**  Authenticate using google and mongodb  **/
     const authenticate = async (data) => {
       const response = await axios.post('/api/users', data);
       console.log(response.data.data._id)
-      sessionStorage.setItem("_id",response.data.data._id);
+      localStorage.setItem("_id",response.data.data._id);
       gotoHome();
     }  
 
@@ -55,7 +61,7 @@ function Login() {
             </Head>
             <div className="container-fluid">
                <LoadingBar height={5} color="#4d61fc" ref={ref} />
-               <div className="text-center">
+               <div className="text-center mt-5 loginButtonHolder">
                                   <GoogleLogin
                                     clientId="259083905478-9vs3cimdg8n1ktrdla6cu5iavp3879qd.apps.googleusercontent.com"
                                     buttonText="Login using Google"

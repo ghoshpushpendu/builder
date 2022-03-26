@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import axios from 'axios';
 import React, { useRef,useState, useEffect } from 'react'
+import ProfileDropdown from "./components/dropdown/profileDropdown"
 
 function Header(props) {
     const [user,setUser] = useState(null) 
@@ -22,8 +23,8 @@ function Header(props) {
 
     useEffect(() => {
       // Update the document title using the browser API
-      if(sessionStorage.getItem("_id") != undefined || sessionStorage.getItem("_id") != null){
-        getProfile(sessionStorage.getItem("_id"))
+      if(localStorage.getItem("_id") != undefined && localStorage.getItem("_id") != null){
+        getProfile(localStorage.getItem("_id"))
       }
     },[]);
 
@@ -38,12 +39,12 @@ function Header(props) {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <link href="./css/common.css" rel="stylesheet" />
                 <link rel="icon" href="./images/IMG_4870.PNG" />
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
             </Head>
             {
                 user ? (
                     <div className="float-end text-center" role="button">
-                        <img src={user.imageUrl} alt="Avatar" className="avatar"/>
-                        <div>{user.name}</div>
+                        <ProfileDropdown user={user}/>
                     </div>
                 ) : (
                     <div className="float-end text-center" role="button" onClick={()=>{gotoLoginPage()}}>

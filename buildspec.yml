@@ -11,7 +11,8 @@ phases:
   post_build:
     commands:
       - cp appspec.yml /build
-      - cp -R /script/* /build/script
+      - mkdir /build/scripts
+      - cp -R /scripts/* /build/scripts
 artifacts:
   files:
     - build/**/*

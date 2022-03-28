@@ -10,9 +10,10 @@ phases:
       - npm run build
   post_build:
     commands:
-      - cp appspec.yml /build
-      - mkdir /build/scripts
-      - cp -R /scripts/* /build/scripts
+      - cp appspec.yml build
+      - cd build
+      - mkdir scripts
+      - cp -R scripts/* build/scripts
 artifacts:
   files:
     - build/**/*

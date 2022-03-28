@@ -20,3 +20,5 @@ async function dbConnect() {
 export default dbConnect;
 
 // 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
+
+// wget https://aws-codedeploy-ap-east-1.s3.ap-east-1.amazonaws.com/latest/install

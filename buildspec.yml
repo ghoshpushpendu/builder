@@ -13,6 +13,7 @@ phases:
       - cp appspec.yml build
       - cd build
       - mkdir scripts
+      - cd ..
       - cp -R scripts/* build/scripts
 artifacts:
   files:

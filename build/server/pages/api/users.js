@@ -35,6 +35,7 @@ async function dbConnect() {
     console.log("Database is connected : ", connection.isConnected);
 }
 /* harmony default export */ const utils_dbConnect = (dbConnect); // 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
+ // wget https://aws-codedeploy-ap-east-1.s3.ap-east-1.amazonaws.com/latest/install
 
 ;// CONCATENATED MODULE: ./pages/api/users.js
 

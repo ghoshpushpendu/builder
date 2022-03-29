@@ -5,5 +5,4 @@ module.exports = {
 	    google_client_secret: "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"
 	},
 	distDir:"build",
-	reactStrictMode: true,
 }

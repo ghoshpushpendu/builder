@@ -2,5 +2,5 @@
 	"endOfLine":"auto",
 	"printWidth": 100,
 	"tabWidth": 2,
-	"traillingComma":"es5"
+	"traillingComma":"es5 "
 }

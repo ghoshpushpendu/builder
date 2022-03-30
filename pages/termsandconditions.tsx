@@ -1,8 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-icons/font/bootstrap-icons.css'
-import Footer from "./footer"
-import Header from "./header"
-import Start from "./parts/start"
+import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import Footer from "./footer";
+import Header from "./header";
+import Start from "./parts/start";
 function TermsandConditions() {
 
 
@@ -135,7 +135,7 @@ function TermsandConditions() {
         <p>As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.</p>
         </div>
       <Footer></Footer>
-    </div>)
-}
+    </div>);
+};
 
-export default TermsandConditions
+export default TermsandConditions;

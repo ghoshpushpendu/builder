@@ -12,7 +12,7 @@ function ProfileDropdown(props) {
              <div>{props?.user?.name}</div>
           </div>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-            <li className="dropdown-item" onClick={()=>{logout()}}><i class="bi bi-power"></i> Logout</li>
+            <li className="dropdown-item" onClick={()=>{logout()}}><i className="bi bi-power"></i> Logout</li>
           </ul>
         </div>
     )

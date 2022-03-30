@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import { connect } from 'mongoose';
 
 const connection = {};
 
@@ -7,7 +7,7 @@ async function dbConnect() {
        return;
 	}
 
-	const db = await mongoose.connect(process.env.mongouri,{
+	const db = await connect(process.env.mongouri,{
 		useNewUrlParser:true,
 		useUnifiedTopology:true
 	})

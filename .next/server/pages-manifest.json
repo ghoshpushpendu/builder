@@ -2,17 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/": "pages/index.js",
   "/api/users": "pages/api/users.js",
-  "/auth/login": "pages/auth/login.html",
-  "/components/dropdown/profileDropdown": "pages/components/dropdown/profileDropdown.html",
-  "/footer": "pages/footer.html",
-  "/header": "pages/header.html",
-  "/": "pages/index.html",
-  "/nearme": "pages/nearme.html",
-  "/nearme/result": "pages/nearme/result.html",
-  "/parts/searchbox": "pages/parts/searchbox.html",
-  "/parts/start": "pages/parts/start.html",
-  "/termsandconditions": "pages/termsandconditions.html",
-  "/privacypolicy": "pages/privacypolicy.html",
-  "/404": "pages/404.html"
+  "/auth/login": "pages/auth/login.js"
 }

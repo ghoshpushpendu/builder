@@ -4,6 +4,8 @@ import Users from './../../models/Users.model';
 
 dbConnect();
 
+// changes only
+
 export default async (req, res) => {
     if(req.method == "POST"){
     	 let userInfo:any = getUserInfo(req.body)

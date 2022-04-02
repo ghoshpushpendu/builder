@@ -40,6 +40,7 @@ phases:
        - docker build -t thesigma .
        - docker tag thesigma:latest 297180213227.dkr.ecr.ap-south-1.amazonaws.com/thesigma:latest
        - docker push 297180213227.dkr.ecr.ap-south-1.amazonaws.com/thesigma:latest
+       - aws ecs update-service --cluster theSigma --service thesigma --force-new-deployment
   #post_build:
     #commands:
       # - command

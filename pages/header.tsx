@@ -35,7 +35,7 @@ function Header(props) {
                 <span className="mt-2">{props.title ? props.title : ""}</span>
             </div>
             <Head>
-                <title>The Sigma | {props.title ? props.title : "Everything Online"}</title>
+                <title>The Sigma | {props.title ? props.title : "Empowering Innovations"}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <link href="./css/common.css" rel="stylesheet" />
                 <link rel="icon" href="./images/IMG_4870.PNG" />

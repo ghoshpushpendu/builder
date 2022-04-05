@@ -15,6 +15,13 @@ export default async (req, res) => {
 	    })
 	    if(!user){
            user = await Users.insertOne(userInfo)
+	    }else{
+	    	await Users.updateOne({email:userInfo.email},{
+	    		$set :{
+	    			name : userInfo.name,
+	    			imageUrl : userInfo.imageUrl
+	    		}
+	    	})
 	    }
 	    console.log("user",user)
 		 res.status(200).json({

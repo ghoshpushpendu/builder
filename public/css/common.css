@@ -1,6 +1,6 @@
 .header {
-  color: #f0f9ff;
-  background-color: #282d32;
+  background-color: #4759e9 !important;
+  color: #f0f9ff !important;
 }
 .logo {
   margin-right: 10px;
@@ -73,26 +73,22 @@ body {
   box-sizing: border-box;
 }
 
-.card {
-  border: none !important;
-}
-
-.card-title {
+.card:hover {
   cursor: pointer;
-  line-height: 20px !important;
+  background-color: #4759e9 !important;
+  color: #f0f9ff !important;
 }
 
-.card-title:hover {
-  text-decoration: underline;
-  color: #4759e9;
-}
 
 /** CSS for the footer **/
 .footer-dark {
-  margin-top: 50px;
-  padding: 50px 0;
-  color: #f0f9ff;
-  background-color: #282d32;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  margin-top: 10px;
+  padding: 10px 0;
+  color: black;
 }
 
 .footer-dark h3 {
@@ -123,12 +119,12 @@ body {
 @media (max-width: 767px) {
   .footer-dark .item:not(.social) {
     text-align: center;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
   }
 }
 
 .footer-dark .item.text {
-  margin-bottom: 36px;
+  margin-bottom: 10px;
 }
 
 @media (max-width: 767px) {
@@ -149,7 +145,7 @@ body {
 @media (max-width: 991px) {
   .footer-dark .item.social {
     text-align: center;
-    margin-top: 20px;
+    margin-top: 10px;
   }
 }
 
@@ -173,8 +169,7 @@ body {
 
 .footer-dark .copyright {
   text-align: center;
-  padding-top: 24px;
-  opacity: 0.3;
+  padding-top: 10px;
   font-size: 13px;
   margin-bottom: 0;
 }
@@ -228,8 +223,14 @@ h5 {
   height: 35px;
   border-radius: 50%;
   cursor: pointer;
+  margin-top: 5px;
 }
 
 .loginButtonHolder button {
-  box-shadow: none !important;
+}
+
+
+.navbar{
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
 }

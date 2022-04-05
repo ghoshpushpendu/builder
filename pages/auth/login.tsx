@@ -5,6 +5,7 @@ import React, { useRef,useState, useEffect } from 'react'
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
+import Footer from "./../footer"
 
 function Login() {
     const ref = useRef(null);
@@ -65,15 +66,16 @@ function Login() {
                                   <GoogleLogin
                                     clientId="259083905478-9vs3cimdg8n1ktrdla6cu5iavp3879qd.apps.googleusercontent.com"
                                     buttonText="Login using Google"
-                                    onSuccess={responseGoogle}
+                                     onSuccess={responseGoogle}
                                     onFailure={responseGoogle}
                                     cookiePolicy={'single_host_origin'}
-                                    isSignedIn={true}
+                                    isSignedIn={false}
                                     onAutoLoadFinished={LoadFinished}
                                   />
-                                  <div className="mt-5">Click on the button above to login.</div>
+                                  <div className="mt-5">Click on the button above to login. You need to login to access the application.</div>
                </div>
             </div>
+            <Footer></Footer>
         </div>
     )
 }

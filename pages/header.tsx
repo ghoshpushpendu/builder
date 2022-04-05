@@ -25,6 +25,8 @@ function Header(props) {
       // Update the document title using the browser API
       if(localStorage.getItem("_id") != undefined && localStorage.getItem("_id") != null){
         getProfile(localStorage.getItem("_id"))
+      }else {
+        gotoLoginPage();
       }
     },[]);
 
@@ -32,12 +34,12 @@ function Header(props) {
         <nav className="navbar header ps-3 pe-3">
             <div className="navbar-brand brand float-start" onClick={() => { gotoHomePage() }}>
                 <img src="../images/IMG_4867.PNG" width="40" height="40" className="d-inline-block align-top logo" alt="" />
-                <span className="mt-2">{props.title ? props.title : ""}</span>
+                <span className="align-middle">{props.title ? props.title : "Home"}</span>
             </div>
             <Head>
                 <title>The Sigma | {props.title ? props.title : "Empowering Innovations"}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-                <link href="./css/common.css" rel="stylesheet" />
+                <link href="/css/common.css" rel="stylesheet" />
                 <link rel="icon" href="./images/IMG_4870.PNG" />
                 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossOrigin="anonymous"></script>
             </Head>

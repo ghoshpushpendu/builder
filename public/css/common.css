@@ -73,10 +73,14 @@ body {
   box-sizing: border-box;
 }
 
-.card:hover {
+.applist .card:hover {
   cursor: pointer;
   background-color: #4759e9 !important;
   color: #f0f9ff !important;
+}
+
+.applist .app .card{
+   background-color: lightgrey; !important;
 }
 
 
@@ -233,4 +237,11 @@ h5 {
 .navbar{
   padding-top: 0px !important;
   padding-bottom: 0px !important;
+}
+
+.error{
+  width: 100%;
+  margin-top: 0.25rem;
+  font-size: .875em;
+  color: #dc3545;
 }

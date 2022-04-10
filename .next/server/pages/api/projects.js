@@ -1,55 +1,128 @@
 "use strict";
-/*
- * ATTENTION: An "eval-source-map" devtool has been used.
- * This devtool is neither made for production nor for readable output files.
- * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
- * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
- * or disable the default devtool with "devtool: false".
- * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
- */
 (() => {
 var exports = {};
-exports.id = "pages/api/projects";
-exports.ids = ["pages/api/projects"];
+exports.id = 646;
+exports.ids = [646];
 exports.modules = {
 
-/***/ "mongoose":
-/*!***************************!*\
-  !*** external "mongoose" ***!
-  \***************************/
+/***/ 185:
 /***/ ((module) => {
 
 module.exports = require("mongoose");
 
 /***/ }),
 
-/***/ "(api)/./controllers/Projects.controller.ts":
-/*!********************************************!*\
-  !*** ./controllers/Projects.controller.ts ***!
-  \********************************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("\nvar _projectsModel = _interopRequireDefault(__webpack_require__(/*! ./../models/Projects.model */ \"(api)/./models/Projects.model.ts\"));\nfunction _interopRequireDefault(obj) {\n    return obj && obj.__esModule ? obj : {\n        default: obj\n    };\n}\nclass ProjectsController {\n    handleRequests = async (req, res)=>{\n        console.log(\"Handling Project Requests\");\n        if (req.method == \"POST\") {\n            return await this.createProject(req, res);\n        } else if (req.method == \"GET\") {\n            return await this.getProjects(req, res);\n        }\n    };\n    // create project\n    createProject = async (req, res)=>{\n        let projectData = req.body;\n        let projectDocument = new _projectsModel.default(projectData);\n        projectDocument.save((error, success)=>{\n            if (error) {\n                res.status(200).json({\n                    error: true,\n                    message: \"Project not created !\",\n                    data: error\n                });\n            } else {\n                res.status(200).json({\n                    error: false,\n                    message: \"Project created !\",\n                    data: success\n                });\n            }\n        });\n    };\n    // get project(s)\n    getProjects = async (req, res)=>{\n        let userId = req.query.userId; // projects of a user\n        let query = {};\n        if (userId) {\n            query = {\n                \"users.userId\": userId\n            };\n        }\n        let projects = await _projectsModel.default.find({});\n        console.log(projects);\n        res.status(200).json({\n            error: false,\n            message: \"List of Projects of current user !\",\n            data: projects\n        });\n    };\n}\nmodule.exports = new ProjectsController();\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9jb250cm9sbGVycy9Qcm9qZWN0cy5jb250cm9sbGVyLnRzLmpzIiwibWFwcGluZ3MiOiI7QUFBcUIsR0FBNEIsQ0FBNUIsY0FBNEI7Ozs7OztNQUUzQ0Esa0JBQWtCO0lBQ3JCQyxjQUFjLFVBQVVDLEdBQUcsRUFBQ0MsR0FBRyxHQUFLLENBQUM7UUFDcENDLE9BQU8sQ0FBQ0MsR0FBRyxDQUFDLENBQTJCLDJCO1FBQ3RDLEVBQUUsRUFBQ0gsR0FBRyxDQUFDSSxNQUFNLElBQUksQ0FBTSxPQUFDLENBQUM7WUFDckIsTUFBTSxDQUFDLEtBQUssQ0FBQyxJQUFJLENBQUNDLGFBQWEsQ0FBQ0wsR0FBRyxFQUFDQyxHQUFHO1FBQzNDLENBQUMsTUFBSyxFQUFFLEVBQUNELEdBQUcsQ0FBQ0ksTUFBTSxJQUFJLENBQUssTUFBQyxDQUFDO1lBQzFCLE1BQU0sQ0FBQyxLQUFLLENBQUMsSUFBSSxDQUFDRSxXQUFXLENBQUNOLEdBQUcsRUFBQ0MsR0FBRztRQUN6QyxDQUFDO0lBQ0gsQ0FBQztJQUVELEVBQWlCO0lBQ2pCSSxhQUFhLFVBQVVMLEdBQUcsRUFBQ0MsR0FBRyxHQUFLLENBQUM7UUFDaEMsR0FBRyxDQUFDTSxXQUFXLEdBQUdQLEdBQUcsQ0FBQ1EsSUFBSTtRQUMxQixHQUFHLENBQUNDLGVBQWUsR0FBRyxHQUFHLENBQUNDLGNBQVEsU0FBQ0gsV0FBVztRQUM5Q0UsZUFBZSxDQUFDRSxJQUFJLEVBQUVDLEtBQUssRUFBQ0MsT0FBTyxHQUFHLENBQUM7WUFDdEMsRUFBRSxFQUFDRCxLQUFLLEVBQUMsQ0FBQztnQkFDTlgsR0FBRyxDQUFDYSxNQUFNLENBQUMsR0FBRyxFQUFFQyxJQUFJLENBQUMsQ0FBQztvQkFDckJILEtBQUssRUFBQyxJQUFJO29CQUNWSSxPQUFPLEVBQUMsQ0FBdUI7b0JBQy9CQyxJQUFJLEVBQUVMLEtBQUs7Z0JBQ1osQ0FBQyxDO1lBQ0wsQ0FBQyxNQUFJLENBQUM7Z0JBQ0ZYLEdBQUcsQ0FBQ2EsTUFBTSxDQUFDLEdBQUcsRUFBRUMsSUFBSSxDQUFDLENBQUM7b0JBQ3JCSCxLQUFLLEVBQUMsS0FBSztvQkFDWEksT0FBTyxFQUFDLENBQW1CO29CQUMzQkMsSUFBSSxFQUFFSixPQUFPO2dCQUNkLENBQUMsQztZQUNMLENBQUM7UUFDRixDQUFDLEM7SUFDTCxDQUFDO0lBRUQsRUFBaUI7SUFDakJQLFdBQVcsVUFBVU4sR0FBRyxFQUFDQyxHQUFHLEdBQUssQ0FBQztRQUM5QixHQUFHLENBQUNpQixNQUFNLEdBQUdsQixHQUFHLENBQUNtQixLQUFLLENBQUNELE1BQU0sRUFBRSxFQUFxQjtRQUNwRCxHQUFHLENBQUNDLEtBQUssR0FBRyxDQUFDLENBQ1o7UUFDRCxFQUFFLEVBQUNELE1BQU0sRUFBQyxDQUFDO1lBQ1BDLEtBQUssR0FBRyxDQUFDO2dCQUNSLENBQWMsZUFBR0QsTUFBTTtZQUN4QixDQUFDO1FBQ0wsQ0FBQztRQUNELEdBQUcsQ0FBQ0UsUUFBUSxHQUFHLEtBQUssQ0FBQ1YsY0FBUSxTQUFDVyxJQUFJLENBQUMsQ0FBQyxDQUFDO1FBQ3JDbkIsT0FBTyxDQUFDQyxHQUFHLENBQUNpQixRQUFRLEM7UUFDcEJuQixHQUFHLENBQUNhLE1BQU0sQ0FBQyxHQUFHLEVBQUVDLElBQUksQ0FBQyxDQUFDO1lBQ2pCSCxLQUFLLEVBQUMsS0FBSztZQUNYSSxPQUFPLEVBQUMsQ0FBb0M7WUFDNUNDLElBQUksRUFBRUcsUUFBUTtRQUNuQixDQUFDLEM7SUFDTCxDQUFDOztBQUdKRSxNQUFNLENBQUNDLE9BQU8sR0FBRyxHQUFHLENBQUN6QixrQkFBa0IsRUFBRSxDQUFDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vY29udHJvbGxlcnMvUHJvamVjdHMuY29udHJvbGxlci50cz85NjJkIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBQcm9qZWN0cyBmcm9tIFwiLi8uLi9tb2RlbHMvUHJvamVjdHMubW9kZWxcIjtcblxuY2xhc3MgUHJvamVjdHNDb250cm9sbGVyIHtcbiAgIGhhbmRsZVJlcXVlc3RzID0gYXN5bmMgKHJlcSxyZXMpID0+IHtcbiAgIFx0Y29uc29sZS5sb2coXCJIYW5kbGluZyBQcm9qZWN0IFJlcXVlc3RzXCIpXG4gICAgIGlmKHJlcS5tZXRob2QgPT0gXCJQT1NUXCIpe1xuICAgICAgICAgcmV0dXJuIGF3YWl0IHRoaXMuY3JlYXRlUHJvamVjdChyZXEscmVzKTtcbiAgICAgfWVsc2UgaWYocmVxLm1ldGhvZCA9PSBcIkdFVFwiKXtcbiAgICAgICAgIHJldHVybiBhd2FpdCB0aGlzLmdldFByb2plY3RzKHJlcSxyZXMpO1xuICAgICB9XG4gICB9XG5cbiAgIC8vIGNyZWF0ZSBwcm9qZWN0XG4gICBjcmVhdGVQcm9qZWN0ID0gYXN5bmMgKHJlcSxyZXMpID0+IHtcbiAgICAgICBsZXQgcHJvamVjdERhdGEgPSByZXEuYm9keTtcbiAgICAgICBsZXQgcHJvamVjdERvY3VtZW50ID0gbmV3IFByb2plY3RzKHByb2plY3REYXRhKVxuICAgICAgIHByb2plY3REb2N1bWVudC5zYXZlKChlcnJvcixzdWNjZXNzKT0+e1xuICAgICAgIFx0aWYoZXJyb3Ipe1xuICAgICAgICAgICAgcmVzLnN0YXR1cygyMDApLmpzb24oe1xuICAgICAgICAgICAgXHRlcnJvcjp0cnVlLFxuICAgICAgICAgICAgXHRtZXNzYWdlOlwiUHJvamVjdCBub3QgY3JlYXRlZCAhXCIsXG4gICAgICAgICAgICBcdGRhdGE6IGVycm9yXG4gICAgICAgICAgICB9KVxuICAgICAgIFx0fWVsc2V7XG4gICAgICAgICAgICByZXMuc3RhdHVzKDIwMCkuanNvbih7XG4gICAgICAgICAgICBcdGVycm9yOmZhbHNlLFxuICAgICAgICAgICAgXHRtZXNzYWdlOlwiUHJvamVjdCBjcmVhdGVkICFcIixcbiAgICAgICAgICAgIFx0ZGF0YTogc3VjY2Vzc1xuICAgICAgICAgICAgfSlcbiAgICAgICBcdH1cbiAgICAgICB9KSBcbiAgIH1cblxuICAgLy8gZ2V0IHByb2plY3QocylcbiAgIGdldFByb2plY3RzID0gYXN5bmMgKHJlcSxyZXMpID0+IHtcbiAgICAgICBsZXQgdXNlcklkID0gcmVxLnF1ZXJ5LnVzZXJJZDsgLy8gcHJvamVjdHMgb2YgYSB1c2VyXG4gICAgICAgbGV0IHF1ZXJ5ID0ge1xuICAgICAgIH1cbiAgICAgICBpZih1c2VySWQpe1xuICAgICAgICAgICBxdWVyeSA9IHtcbiAgICAgICAgICAgXHRcInVzZXJzLnVzZXJJZFwiIDogdXNlcklkXG4gICAgICAgICAgIH1cbiAgICAgICB9XG4gICAgICAgbGV0IHByb2plY3RzID0gYXdhaXQgUHJvamVjdHMuZmluZCh7fSk7XG4gICAgICAgY29uc29sZS5sb2cocHJvamVjdHMpXG4gICAgICAgcmVzLnN0YXR1cygyMDApLmpzb24oe1xuICAgICAgICAgICAgZXJyb3I6ZmFsc2UsXG4gICAgICAgICAgICBtZXNzYWdlOlwiTGlzdCBvZiBQcm9qZWN0cyBvZiBjdXJyZW50IHVzZXIgIVwiLFxuICAgICAgICAgICAgZGF0YTogcHJvamVjdHNcbiAgICAgICB9KVxuICAgfVxufVxuXG5tb2R1bGUuZXhwb3J0cyA9IG5ldyBQcm9qZWN0c0NvbnRyb2xsZXIoKTtcbiJdLCJuYW1lcyI6WyJQcm9qZWN0c0NvbnRyb2xsZXIiLCJoYW5kbGVSZXF1ZXN0cyIsInJlcSIsInJlcyIsImNvbnNvbGUiLCJsb2ciLCJtZXRob2QiLCJjcmVhdGVQcm9qZWN0IiwiZ2V0UHJvamVjdHMiLCJwcm9qZWN0RGF0YSIsImJvZHkiLCJwcm9qZWN0RG9jdW1lbnQiLCJQcm9qZWN0cyIsInNhdmUiLCJlcnJvciIsInN1Y2Nlc3MiLCJzdGF0dXMiLCJqc29uIiwibWVzc2FnZSIsImRhdGEiLCJ1c2VySWQiLCJxdWVyeSIsInByb2plY3RzIiwiZmluZCIsIm1vZHVsZSIsImV4cG9ydHMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(api)/./controllers/Projects.controller.ts\n");
-
-/***/ }),
-
-/***/ "(api)/./models/Projects.model.ts":
-/*!**********************************!*\
-  !*** ./models/Projects.model.ts ***!
-  \**********************************/
+/***/ 370:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar mongoose = __webpack_require__(/*! mongoose */ \"mongoose\");\nvar Schema = mongoose.Schema;\nvar projectsSchema = new Schema({\n    name: {\n        type: String,\n        required: true\n    },\n    projectType: {\n        type: String,\n        required: true\n    },\n    technologies: [\n        {\n            type: String\n        }\n    ],\n    createdDate: {\n        type: Date,\n        default: Date.now()\n    },\n    modifiedDate: {\n        type: Date\n    },\n    users: [\n        {\n            userId: {\n                type: Schema.Types.ObjectId,\n                ref: \"Users\",\n                required: true\n            },\n            role: {\n                type: String,\n                default: \"user\"\n            }\n        }\n    ] // users who can perform tasks in this project\n});\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mongoose.models.Projects || mongoose.model('Projects', projectsSchema));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9tb2RlbHMvUHJvamVjdHMubW9kZWwudHMuanMiLCJtYXBwaW5ncyI6Ijs7OztBQUFBLEdBQUcsQ0FBQ0EsUUFBUSxHQUFHQyxtQkFBTyxDQUFDLDBCQUFVO0FBQ2pDLEdBQUcsQ0FBQ0MsTUFBTSxHQUFHRixRQUFRLENBQUNFLE1BQU07QUFHNUIsR0FBRyxDQUFDQyxjQUFjLEdBQUcsR0FBRyxDQUFDRCxNQUFNLENBQUMsQ0FBQztJQUM5QkUsSUFBSSxFQUFDLENBQUM7UUFDSEMsSUFBSSxFQUFDQyxNQUFNO1FBQ1hDLFFBQVEsRUFBQyxJQUFJO0lBQ2hCLENBQUM7SUFDREMsV0FBVyxFQUFDLENBQUM7UUFDVkgsSUFBSSxFQUFDQyxNQUFNO1FBQ1hDLFFBQVEsRUFBRSxJQUFJO0lBQ2pCLENBQUM7SUFDREUsWUFBWSxFQUFDLENBQUM7UUFBQSxDQUFDO1lBQ1pKLElBQUksRUFBQ0MsTUFBTTtRQUNkLENBQUM7SUFBQSxDQUFDO0lBQ0ZJLFdBQVcsRUFBQyxDQUFDO1FBQ1ZMLElBQUksRUFBRU0sSUFBSTtRQUNWQyxPQUFPLEVBQUVELElBQUksQ0FBQ0UsR0FBRztJQUNwQixDQUFDO0lBQ0RDLFlBQVksRUFBRyxDQUFDO1FBQ2JULElBQUksRUFBR00sSUFBSTtJQUNkLENBQUM7SUFDREksS0FBSyxFQUFHLENBQUM7UUFBQSxDQUFDO1lBQ1BDLE1BQU0sRUFBQyxDQUFDO2dCQUNMWCxJQUFJLEVBQUVILE1BQU0sQ0FBQ2UsS0FBSyxDQUFDQyxRQUFRO2dCQUMzQkMsR0FBRyxFQUFDLENBQU87Z0JBQ1haLFFBQVEsRUFBRSxJQUFJO1lBQ2pCLENBQUM7WUFDRGEsSUFBSSxFQUFDLENBQUM7Z0JBQ0hmLElBQUksRUFBQ0MsTUFBTTtnQkFDWE0sT0FBTyxFQUFDLENBQU07WUFDakIsQ0FBQztRQUNKLENBQUM7SUFBQSxDQUFDLENBQUMsRUFBOEM7QUFDcEQsQ0FBQztBQUVELGlFQUFlWixRQUFRLENBQUNxQixNQUFNLENBQUNDLFFBQVEsSUFBSXRCLFFBQVEsQ0FBQ3VCLEtBQUssQ0FBQyxDQUFVLFdBQUVwQixjQUFjLENBQUMsRUFBQyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL21vZGVscy9Qcm9qZWN0cy5tb2RlbC50cz8wMjAxIl0sInNvdXJjZXNDb250ZW50IjpbInZhciBtb25nb29zZSA9IHJlcXVpcmUoJ21vbmdvb3NlJyk7XG52YXIgU2NoZW1hID0gbW9uZ29vc2UuU2NoZW1hO1xuXG5cbnZhciBwcm9qZWN0c1NjaGVtYSA9IG5ldyBTY2hlbWEoe1xuICAgbmFtZTp7XG4gICAgICB0eXBlOlN0cmluZyxcbiAgICAgIHJlcXVpcmVkOnRydWVcbiAgIH0sXG4gICBwcm9qZWN0VHlwZTp7XG4gICAgICB0eXBlOlN0cmluZyxcbiAgICAgIHJlcXVpcmVkOiB0cnVlXG4gICB9LFxuICAgdGVjaG5vbG9naWVzOlt7XG4gICAgICB0eXBlOlN0cmluZ1xuICAgfV0sXG4gICBjcmVhdGVkRGF0ZTp7XG4gICAgICB0eXBlOiBEYXRlLFxuICAgICAgZGVmYXVsdDogRGF0ZS5ub3coKSBcbiAgIH0sXG4gICBtb2RpZmllZERhdGUgOiB7XG4gICAgICB0eXBlIDogRGF0ZVxuICAgfSxcbiAgIHVzZXJzIDogW3tcbiAgICAgIHVzZXJJZDp7XG4gICAgICAgICB0eXBlOiBTY2hlbWEuVHlwZXMuT2JqZWN0SWQsXG4gICAgICAgICByZWY6XCJVc2Vyc1wiLFxuICAgICAgICAgcmVxdWlyZWQ6IHRydWVcbiAgICAgIH0sXG4gICAgICByb2xlOntcbiAgICAgICAgIHR5cGU6U3RyaW5nLFxuICAgICAgICAgZGVmYXVsdDpcInVzZXJcIlxuICAgICAgfVxuICAgfV0gLy8gdXNlcnMgd2hvIGNhbiBwZXJmb3JtIHRhc2tzIGluIHRoaXMgcHJvamVjdFxufSk7XG5cbmV4cG9ydCBkZWZhdWx0IG1vbmdvb3NlLm1vZGVscy5Qcm9qZWN0cyB8fCBtb25nb29zZS5tb2RlbCgnUHJvamVjdHMnLCBwcm9qZWN0c1NjaGVtYSk7Il0sIm5hbWVzIjpbIm1vbmdvb3NlIiwicmVxdWlyZSIsIlNjaGVtYSIsInByb2plY3RzU2NoZW1hIiwibmFtZSIsInR5cGUiLCJTdHJpbmciLCJyZXF1aXJlZCIsInByb2plY3RUeXBlIiwidGVjaG5vbG9naWVzIiwiY3JlYXRlZERhdGUiLCJEYXRlIiwiZGVmYXVsdCIsIm5vdyIsIm1vZGlmaWVkRGF0ZSIsInVzZXJzIiwidXNlcklkIiwiVHlwZXMiLCJPYmplY3RJZCIsInJlZiIsInJvbGUiLCJtb2RlbHMiLCJQcm9qZWN0cyIsIm1vZGVsIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(api)/./models/Projects.model.ts\n");
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
 
-/***/ }),
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": () => (/* binding */ projects)
+});
 
-/***/ "(api)/./pages/api/projects.ts":
-/*!*******************************!*\
-  !*** ./pages/api/projects.ts ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+;// CONCATENATED MODULE: ./models/Projects.model.ts
+var mongoose = __webpack_require__(185);
+var Schema = mongoose.Schema;
+var projectsSchema = new Schema({
+    name: {
+        type: String,
+        required: true
+    },
+    projectType: {
+        type: String,
+        required: true
+    },
+    technologies: [
+        {
+            type: String
+        }
+    ],
+    createdDate: {
+        type: Date,
+        default: Date.now()
+    },
+    modifiedDate: {
+        type: Date
+    },
+    users: [
+        {
+            userId: {
+                type: Schema.Types.ObjectId,
+                ref: "Users",
+                required: true
+            },
+            role: {
+                type: String,
+                default: "user"
+            }
+        }
+    ] // users who can perform tasks in this project
+});
+/* harmony default export */ const Projects_model = (mongoose.models.Projects || mongoose.model('Projects', projectsSchema));
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _controllers_Projects_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../controllers/Projects.controller */ \"(api)/./controllers/Projects.controller.ts\");\n/* harmony import */ var _controllers_Projects_controller__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_controllers_Projects_controller__WEBPACK_IMPORTED_MODULE_0__);\nconst mongoose = __webpack_require__(/*! mongoose */ \"mongoose\");\n\n// changes only\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (async (req, res)=>{\n    console.log(\"Here\");\n    _controllers_Projects_controller__WEBPACK_IMPORTED_MODULE_0___default().handleRequests(req, res);\n});\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9wYWdlcy9hcGkvcHJvamVjdHMudHMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQ0EsS0FBSyxDQUFDQSxRQUFRLEdBQUdDLG1CQUFPLENBQUMsMEJBQVU7QUFFdUM7QUFFMUUsRUFBZTtBQUVmLGlFQUFNLE9BQWdCRSxHQUFHLEVBQUVDLEdBQUcsR0FBSyxDQUFDO0lBQ2xDQyxPQUFPLENBQUNDLEdBQUcsQ0FBQyxDQUFNO0lBQ2xCSixzRkFBaUMsQ0FBQ0MsR0FBRyxFQUFDQyxHQUFHO0FBQzNDLENBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9wYWdlcy9hcGkvcHJvamVjdHMudHM/OTNkOCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgZGJDb25uZWN0IGZyb20gJy4vLi4vLi4vdXRpbHMvZGJDb25uZWN0JztcbmNvbnN0IG1vbmdvb3NlID0gcmVxdWlyZSgnbW9uZ29vc2UnKTtcbmltcG9ydCBQcm9qZWN0cyBmcm9tICcuLy4uLy4uL21vZGVscy9Qcm9qZWN0cy5tb2RlbCc7XG5pbXBvcnQgIFByb2plY3RzQ29udHJvbGxlciAgZnJvbSBcIi4vLi4vLi4vY29udHJvbGxlcnMvUHJvamVjdHMuY29udHJvbGxlclwiO1xuXG4vLyBjaGFuZ2VzIG9ubHlcblxuZXhwb3J0IGRlZmF1bHQgYXN5bmMgKHJlcSwgcmVzKSA9PiB7XG4gIGNvbnNvbGUubG9nKFwiSGVyZVwiKSAgXG4gIFByb2plY3RzQ29udHJvbGxlci5oYW5kbGVSZXF1ZXN0cyhyZXEscmVzKVxufSJdLCJuYW1lcyI6WyJtb25nb29zZSIsInJlcXVpcmUiLCJQcm9qZWN0c0NvbnRyb2xsZXIiLCJyZXEiLCJyZXMiLCJjb25zb2xlIiwibG9nIiwiaGFuZGxlUmVxdWVzdHMiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(api)/./pages/api/projects.ts\n");
+;// CONCATENATED MODULE: ./controllers/Projects.controller.ts
+
+class ProjectsController {
+    handleRequests = async (req, res)=>{
+        console.log("Handling Project Requests");
+        if (req.method == "POST") {
+            return await this.createProject(req, res);
+        } else if (req.method == "GET") {
+            return await this.getProjects(req, res);
+        }
+    };
+    // create project
+    createProject = async (req, res)=>{
+        let projectData = req.body;
+        let projectDocument = new Projects_model(projectData);
+        projectDocument.save((error, success)=>{
+            if (error) {
+                res.status(200).json({
+                    error: true,
+                    message: "Project not created !",
+                    data: error
+                });
+            } else {
+                res.status(200).json({
+                    error: false,
+                    message: "Project created !",
+                    data: success
+                });
+            }
+        });
+    };
+    // get project(s)
+    getProjects = async (req, res)=>{
+        let userId = req.query.userId; // projects of a user
+        let query = {};
+        if (userId) {
+            query = {
+                "users.userId": userId
+            };
+        }
+        let projects = await Projects_model.find({});
+        console.log(projects);
+        res.status(200).json({
+            error: false,
+            message: "List of Projects of current user !",
+            data: projects
+        });
+    };
+}
+/* harmony default export */ const Projects_controller = (new ProjectsController());
+
+;// CONCATENATED MODULE: ./pages/api/projects.ts
+const projects_mongoose = __webpack_require__(185);
+
+// changes only
+/* harmony default export */ const projects = (async (req, res)=>{
+    console.log("Here");
+    Projects_controller.handleRequests(req, res);
+});
+
 
 /***/ })
 
@@ -60,7 +133,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 var __webpack_require__ = require("../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__("(api)/./pages/api/projects.ts"));
+var __webpack_exports__ = (__webpack_exec__(370));
 module.exports = __webpack_exports__;
 
 })();

@@ -51,4 +51,4 @@ class ProjectsController {
    }
 }
 
-module.exports = new ProjectsController();
+export default new ProjectsController();

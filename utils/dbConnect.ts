@@ -1,6 +1,10 @@
-import { connect } from 'mongoose';
+import { connect,ConnectOptions } from 'mongoose';
 
-const connection = {};
+var connection:any = {};
+const connectionOptions = {
+		useNewUrlParser:true,
+		useUnifiedTopology:true
+}
 
 async function dbConnect() {
 	if(connection.isConnected){
@@ -8,10 +12,7 @@ async function dbConnect() {
        return;
 	}
 
-	const db = await connect(process.env.mongouri,{
-		useNewUrlParser:true,
-		useUnifiedTopology:true
-	})
+	const db = await connect(process.env.mongouri,connectionOptions as ConnectOptions);
 
 	connection.isConnected = db.connections[0].readyState;
 	console.log(db.connections[0])

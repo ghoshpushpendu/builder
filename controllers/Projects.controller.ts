@@ -48,13 +48,22 @@ class ProjectsController {
             data: []
          })
        }
-       let projects = await Projects.find(query);
-       console.log(JSON.stringify(projects))
-       res.status(200).json({
-            error:false,
+       try{
+           let projects = await Projects.find(query);
+           console.log(JSON.stringify(projects))
+           res.status(200).json({
+                error:false,
+                message:"List of Projects of current user !",
+                data: projects
+           })
+       }catch(e){
+          console.log("Error fetching projects");
+          return res.status(200).json({
+            error:true,
             message:"List of Projects of current user !",
-            data: projects
-       })
+            data: []
+         })
+       }
    }
 }
 

@@ -37,7 +37,7 @@ class ProjectsController {
        console.log(userId)
        let query = {
        }
-       if(userId){
+       if(userId && userId != null){
          query = {
            "users.userId" : userId
          }

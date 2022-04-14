@@ -29,7 +29,7 @@ function Start() {
             {
                 projects && projects.map((project,i)=>{
                     return (
-                        <div className='col col-sm-6 app' key={i} onClick={()=>{
+                        <div className='col app' key={i} onClick={()=>{
                             goToProject(project._id)
                         }}>
                             <div className="card" style={{ width: "15rem" }}>

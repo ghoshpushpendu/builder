@@ -46,7 +46,7 @@ function Start() {
             children: [
                 projects && projects.map((project, i)=>{
                     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: "col col-sm-6 app",
+                        className: "col app",
                         onClick: ()=>{
                             goToProject(project._id);
                         },

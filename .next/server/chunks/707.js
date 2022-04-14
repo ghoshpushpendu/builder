@@ -100,7 +100,7 @@ function Header(props) {
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("link", {
                         rel: "icon",
-                        href: "./images/IMG_4870.PNG"
+                        href: IMG_4867.src
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("script", {
                         src: "https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js",

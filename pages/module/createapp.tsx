@@ -10,14 +10,16 @@ import css from "./../../public/images/css.png";
 import bootstrap from "./../../public/images/bootstrap.png";
 import React, { useRef, useState, useEffect } from "react";
 import axios from "axios"
+import { useRouter } from "next/router";
+
 function CreateApp() {
   const [project, setProject] = useState({
     name: "",
     projectType: "",
     users:[]
   });
-
-  const [loading,setLoading] = useState(false)
+  const [loading,setLoading] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
       setProject({
@@ -26,7 +28,7 @@ function CreateApp() {
   },[]);
 
     const gotoHome = () => {
-        window.location.href = "/"
+        router.push("/")
     }
 
   const updateValue = (e) => {

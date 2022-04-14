@@ -12,13 +12,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_1__);
+
 
 function Footer() {
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_1__.useRouter)();
     const termsandconditionpage = ()=>{
-        window.location.href = "/termsandconditions";
+        router.push("/termsandconditions");
     };
     const privacypolicypage = ()=>{
-        window.location.href = "/privacypolicy";
+        router.push("/privacypolicy");
     };
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         className: "footer-dark",

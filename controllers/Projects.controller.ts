@@ -34,15 +34,22 @@ class ProjectsController {
    // get project(s)
    getProjects = async (req,res) => {
        let userId = req.query.userId; // projects of a user
+       console.log(userId)
        let query = {
        }
        if(userId){
-           query = {
-           	"users.userId" : userId
-           }
+         query = {
+           "users.userId" : userId
+         }
+       }else{
+         return res.status(200).json({
+            error:true,
+            message:"List of Projects of current user !",
+            data: []
+         })
        }
-       let projects = await Projects.find({});
-       console.log(projects)
+       let projects = await Projects.find(query);
+       console.log(JSON.stringify(projects))
        res.status(200).json({
             error:false,
             message:"List of Projects of current user !",

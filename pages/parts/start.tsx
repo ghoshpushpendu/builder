@@ -1,17 +1,23 @@
 import axios from "axios";
 import React, { useRef, useState, useEffect } from "react";
+import { useRouter } from 'next/router';
 
 function Start() {
     const [projects,setProjects] = useState([]);
+    const router = useRouter()
 
     const goToCreateApp = () => {
-        window.location.href = "/module/createapp"
+        router.push("/module/createapp")
     }
 
     const getProjects = async () => {
         let response = await axios.get('/api/projects?userId='+localStorage.getItem("_id"));
         console.log(response.data.data);
         setProjects(response.data.data)
+    }
+
+    const goToProject = (projectId) => {
+        router.push("/module/editor/"+projectId)
     }
 
     useEffect(()=>{
@@ -23,12 +29,14 @@ function Start() {
             {
                 projects && projects.map((project,i)=>{
                     return (
-                        <div className='col col-sm-6 app' key={i}>
+                        <div className='col col-sm-6 app' key={i} onClick={()=>{
+                            goToProject(project._id)
+                        }}>
                             <div className="card" style={{ width: "15rem" }}>
                                 <div className="card-body">
                                     <h5 className="card-title">{project.name}</h5>
                                     <p className="card-text">Type : {project.projectType}</p>
-                                    <p className="card-text">Techs : HTML, CSS, Javascript</p>
+                                    <p className="card-text">Technologies : HTML, CSS, TypeScript</p>
                                 </div>
                             </div>
                         </div>

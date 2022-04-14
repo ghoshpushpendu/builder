@@ -1,11 +1,14 @@
+import { useRouter } from "next/router";
+
 function Footer() {
+    const router = useRouter();
 
     const termsandconditionpage = () => {
-      window.location.href = "/termsandconditions"
+      router.push("/termsandconditions")
     }
 
     const privacypolicypage = () => {
-      window.location.href = "/privacypolicy"
+      router.push("/privacypolicy")
     }
 
     return (<div className="footer-dark">

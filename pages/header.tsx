@@ -1,17 +1,20 @@
-import Head from 'next/head'
+import Head from 'next/head';
 import axios from 'axios';
-import React, { useRef,useState, useEffect } from 'react'
-import ProfileDropdown from "./components/dropdown/profileDropdown"
+import React, { useRef,useState, useEffect } from 'react';
+import ProfileDropdown from "./components/dropdown/profileDropdown";
+import logo from "./../public/images/IMG_4867.png";
+import { useRouter } from "next/router";
 
 function Header(props) {
     const [user,setUser] = useState(null) 
-   
+    const router = useRouter();
+
     const gotoHomePage = () => {
-        window.location.href = "/"
+        router.push("/")
     }
 
     const gotoLoginPage = () => {
-      window.location.href = "/auth/login"   
+      router.push("/auth/login")
     }
 
     const getProfile = async (_id) => {
@@ -33,7 +36,7 @@ function Header(props) {
     return (
         <nav className="navbar header ps-3 pe-3">
             <div className="navbar-brand brand float-start" onClick={() => { gotoHomePage() }}>
-                <img src="../images/IMG_4867.PNG" width="40" height="40" className="d-inline-block align-top logo" alt="" />
+                <img src={logo.src} width="40" height="40" className="d-inline-block align-top logo" alt="" />
                 <span className="align-middle">{props.title ? props.title : "Home"}</span>
             </div>
             <Head>

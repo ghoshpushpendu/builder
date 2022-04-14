@@ -6,12 +6,14 @@ import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Footer from "./../footer"
+import { useRouter } from "next/router";
 
 function Login() {
     const ref = useRef(null);
+    const router = useRouter();
 
     const gotoHome = () => {
-        window.location.href = "/"
+        router.push("/")
     }
 
     const responseGoogle = (response) => {

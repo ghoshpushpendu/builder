@@ -16,18 +16,25 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
 function Start() {
     const { 0: projects , 1: setProjects  } = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)([]);
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_3__.useRouter)();
     const goToCreateApp = ()=>{
-        window.location.href = "/module/createapp";
+        router.push("/module/createapp");
     };
     const getProjects = async ()=>{
         let response = await axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/projects?userId=' + localStorage.getItem("_id"));
         console.log(response.data.data);
         setProjects(response.data.data);
+    };
+    const goToProject = (projectId)=>{
+        router.push("/module/editor/" + projectId);
     };
     (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(()=>{
         getProjects();
@@ -40,6 +47,9 @@ function Start() {
                 projects && projects.map((project, i)=>{
                     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                         className: "col col-sm-6 app",
+                        onClick: ()=>{
+                            goToProject(project._id);
+                        },
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                             className: "card",
                             style: {
@@ -61,7 +71,7 @@ function Start() {
                                     }),
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
                                         className: "card-text",
-                                        children: "Techs : HTML, CSS, Javascript"
+                                        children: "Technologies : HTML, CSS, TypeScript"
                                     })
                                 ]
                             })

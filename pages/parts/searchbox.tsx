@@ -1,7 +1,10 @@
+import { useRouter } from "next/router";
+
 function SearchBox() {
+    const router = useRouter();
 
     const gotoSearchResultPage = () => {
-        window.location.href = "/nearme"
+        router.push("/nearme");
     }
 
     return (<div className="row searchbox">

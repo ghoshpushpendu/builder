@@ -37,10 +37,10 @@ function Header(props) {
         <nav className="navbar header ps-3 pe-3">
             <div className="navbar-brand brand float-start" onClick={() => { gotoHomePage() }}>
                 <img src={logo.src} width="40" height="40" className="d-inline-block align-top logo" alt="" />
-                <span className="align-middle">{props.title ? props.title : "Home"}</span>
+                <span className="align-middle">{(props.title != null && props.title != undefined ) ? props.title : "Home"}</span>
             </div>
             <Head>
-                <title>The Sigma | {props.title ? props.title : "Empowering Innovations"}</title>
+                <title>The Sigma | {(props.title != null && props.title != undefined ) ? props.title : "Empowering Innovations"}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <link href="/css/common.css" rel="stylesheet" />
                 <link rel="icon" href={logo.src} />

@@ -13,7 +13,7 @@ function Login() {
     const router = useRouter();
 
     const gotoHome = () => {
-        router.push("/")
+        window.location.href = "/"
     }
 
     const responseGoogle = (response) => {

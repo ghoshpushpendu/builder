@@ -1,8 +1,10 @@
-function ProfileDropdown(props) {
+import { useRouter } from "next/router";
 
+function ProfileDropdown(props) {
+    const router = useRouter();
     const logout = () => {
         localStorage.clear();
-        window.location.href = "/"
+        router.push("/auth/login");
     }
 
     return (

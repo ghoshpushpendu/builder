@@ -65,6 +65,32 @@ class ProjectsController {
          })
        }
    }
+
+   handleSingleProject = async (req,res) => {
+    console.log("Handling Project Requests")
+     if(req.method == "POST"){
+         return await this.updateProject(req,res);
+     }else if(req.method == "GET"){
+         return await this.getProject(req,res);
+     }
+   }
+
+   updateProject = async (req,res) => {}
+
+   getProject = async (req,res) => {
+       console.log(req.url)
+       let projectId = req.url.split("/")[req.url.split("/").length - 1]
+       console.log(projectId)
+       let project = await Projects.findOne({
+        _id: projectId
+       })
+       res.status(200).json({
+        error:false,
+        message:"SOmething",
+        data:project
+       })
+   }
+
 }
 
 export default new ProjectsController();

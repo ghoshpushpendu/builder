@@ -1,118 +1,55 @@
 "use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
 (() => {
 var exports = {};
-exports.id = 829;
-exports.ids = [829];
+exports.id = "pages/api/users";
+exports.ids = ["pages/api/users"];
 exports.modules = {
 
-/***/ 185:
+/***/ "mongoose":
+/*!***************************!*\
+  !*** external "mongoose" ***!
+  \***************************/
 /***/ ((module) => {
 
 module.exports = require("mongoose");
 
 /***/ }),
 
-/***/ 440:
+/***/ "(api)/./models/Users.model.ts":
+/*!*******************************!*\
+  !*** ./models/Users.model.ts ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nvar mongoose = __webpack_require__(/*! mongoose */ \"mongoose\");\nvar Schema = mongoose.Schema;\nvar usersSchema = new Schema({\n    name: String,\n    email: String,\n    imageUrl: String,\n    loginProvider: Number\n});\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mongoose.models.Users || mongoose.model(\"Users\", usersSchema));\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9tb2RlbHMvVXNlcnMubW9kZWwudHMuanMiLCJtYXBwaW5ncyI6Ijs7OztBQUFBLElBQUlBLFFBQVEsR0FBR0MsbUJBQU8sQ0FBQywwQkFBVSxDQUFDO0FBQ2xDLElBQUlDLE1BQU0sR0FBR0YsUUFBUSxDQUFDRSxNQUFNO0FBRzVCLElBQUlDLFdBQVcsR0FBRyxJQUFJRCxNQUFNLENBQUM7SUFDMUJFLElBQUksRUFBQ0MsTUFBTTtJQUNYQyxLQUFLLEVBQUNELE1BQU07SUFDWkUsUUFBUSxFQUFDRixNQUFNO0lBQ2ZHLGFBQWEsRUFBQ0MsTUFBTTtDQUN0QixDQUFDO0FBRUYsaUVBQWVULFFBQVEsQ0FBQ1UsTUFBTSxDQUFDQyxLQUFLLElBQUlYLFFBQVEsQ0FBQ1ksS0FBSyxDQUFDLE9BQU8sRUFBRVQsV0FBVyxDQUFDLEVBQUMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9tb2RlbHMvVXNlcnMubW9kZWwudHM/ZTgzOCJdLCJzb3VyY2VzQ29udGVudCI6WyJ2YXIgbW9uZ29vc2UgPSByZXF1aXJlKCdtb25nb29zZScpO1xudmFyIFNjaGVtYSA9IG1vbmdvb3NlLlNjaGVtYTtcblxuXG52YXIgdXNlcnNTY2hlbWEgPSBuZXcgU2NoZW1hKHtcbiAgIG5hbWU6U3RyaW5nLFxuICAgZW1haWw6U3RyaW5nLFxuICAgaW1hZ2VVcmw6U3RyaW5nLFxuICAgbG9naW5Qcm92aWRlcjpOdW1iZXIsXG59KTtcblxuZXhwb3J0IGRlZmF1bHQgbW9uZ29vc2UubW9kZWxzLlVzZXJzIHx8IG1vbmdvb3NlLm1vZGVsKCdVc2VycycsIHVzZXJzU2NoZW1hKTsiXSwibmFtZXMiOlsibW9uZ29vc2UiLCJyZXF1aXJlIiwiU2NoZW1hIiwidXNlcnNTY2hlbWEiLCJuYW1lIiwiU3RyaW5nIiwiZW1haWwiLCJpbWFnZVVybCIsImxvZ2luUHJvdmlkZXIiLCJOdW1iZXIiLCJtb2RlbHMiLCJVc2VycyIsIm1vZGVsIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///(api)/./models/Users.model.ts\n");
 
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ users)
-});
+/***/ }),
 
-;// CONCATENATED MODULE: ./models/Users.model.ts
-var mongoose = __webpack_require__(185);
-var Schema = mongoose.Schema;
-var usersSchema = new Schema({
-    name: String,
-    email: String,
-    imageUrl: String,
-    loginProvider: Number
-});
-/* harmony default export */ const Users_model = (mongoose.models.Users || mongoose.model("Users", usersSchema));
+/***/ "(api)/./pages/api/users.ts":
+/*!****************************!*\
+  !*** ./pages/api/users.ts ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// EXTERNAL MODULE: external "mongoose"
-var external_mongoose_ = __webpack_require__(185);
-;// CONCATENATED MODULE: ./utils/dbConnect.ts
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _models_Users_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../../models/Users.model */ \"(api)/./models/Users.model.ts\");\n/* harmony import */ var _utils_dbConnect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../utils/dbConnect */ \"(api)/./utils/dbConnect.ts\");\nconst mongoose = __webpack_require__(/*! mongoose */ \"mongoose\");\n\n\n(0,_utils_dbConnect__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n// changes only\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (async (req, res)=>{\n    console.log(\"Request is coming here\");\n    if (req.method == \"POST\") {\n        let userInfo = getUserInfo(req.body);\n        console.log(userInfo);\n        let user = await _models_Users_model__WEBPACK_IMPORTED_MODULE_0__[\"default\"].findOne({\n            email: userInfo.email\n        });\n        if (!user) {\n            user = await _models_Users_model__WEBPACK_IMPORTED_MODULE_0__[\"default\"].insertOne(userInfo);\n        } else {\n            await _models_Users_model__WEBPACK_IMPORTED_MODULE_0__[\"default\"].updateOne({\n                email: userInfo.email\n            }, {\n                $set: {\n                    name: userInfo.name,\n                    imageUrl: userInfo.imageUrl\n                }\n            });\n        }\n        console.log(\"user\", user);\n        res.status(200).json({\n            error: false,\n            message: \"Got user\",\n            data: user\n        });\n    }\n    if (req.method == \"GET\") {\n        console.log(req.query);\n        let _id = req.query._id;\n        console.log(_id);\n        let user = await _models_Users_model__WEBPACK_IMPORTED_MODULE_0__[\"default\"].findOne({\n            _id: mongoose.Types.ObjectId(_id)\n        });\n        console.log(user);\n        res.status(200).json({\n            error: false,\n            message: \"Got user\",\n            data: user\n        });\n    }\n});\nconst getUserInfo = (data)=>{\n    return {\n        email: data.profileObj.email,\n        name: data.profileObj.name,\n        imageUrl: data.profileObj.imageUrl,\n        loginProvider: \"google\"\n    };\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi9wYWdlcy9hcGkvdXNlcnMudHMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQUEsTUFBTUEsUUFBUSxHQUFHQyxtQkFBTyxDQUFDLDBCQUFVLENBQUM7QUFDVztBQUNDO0FBRWhERSw0REFBUyxFQUFFLENBQUM7QUFDWixlQUFlO0FBRWYsaUVBQWUsT0FBT0MsR0FBTyxFQUFFQyxHQUFPLEdBQUs7SUFDekNDLE9BQU8sQ0FBQ0MsR0FBRyxDQUFDLHdCQUF3QixDQUFDO0lBQ25DLElBQUdILEdBQUcsQ0FBQ0ksTUFBTSxJQUFJLE1BQU0sRUFBQztRQUN0QixJQUFJQyxRQUFRLEdBQU9DLFdBQVcsQ0FBQ04sR0FBRyxDQUFDTyxJQUFJLENBQUM7UUFDeENMLE9BQU8sQ0FBQ0MsR0FBRyxDQUFDRSxRQUFRLENBQUM7UUFDdEIsSUFBSUcsSUFBSSxHQUFPLE1BQU1WLG1FQUFhLENBQUM7WUFDbENZLEtBQUssRUFBQ0wsUUFBUSxDQUFDSyxLQUFLO1NBQ3BCLENBQUM7UUFDRixJQUFHLENBQUNGLElBQUksRUFBQztZQUNIQSxJQUFJLEdBQUcsTUFBTVYscUVBQWUsQ0FBQ08sUUFBUSxDQUFDO1NBQzNDLE1BQUk7WUFDSixNQUFNUCxxRUFBZSxDQUFDO2dCQUFDWSxLQUFLLEVBQUNMLFFBQVEsQ0FBQ0ssS0FBSzthQUFDLEVBQUM7Z0JBQzVDRyxJQUFJLEVBQUU7b0JBQ0xDLElBQUksRUFBR1QsUUFBUSxDQUFDUyxJQUFJO29CQUNwQkMsUUFBUSxFQUFHVixRQUFRLENBQUNVLFFBQVE7aUJBQzVCO2FBQ0QsQ0FBQztTQUNGO1FBQ0RiLE9BQU8sQ0FBQ0MsR0FBRyxDQUFDLE1BQU0sRUFBQ0ssSUFBSSxDQUFDO1FBQzFCUCxHQUFHLENBQUNlLE1BQU0sQ0FBQyxHQUFHLENBQUMsQ0FBQ0MsSUFBSSxDQUFDO1lBQ3JCQyxLQUFLLEVBQUMsS0FBSztZQUNYQyxPQUFPLEVBQUMsVUFBVTtZQUNsQkMsSUFBSSxFQUFHWixJQUFJO1NBQ1YsQ0FBQztLQUNBO0lBRUQsSUFBR1IsR0FBRyxDQUFDSSxNQUFNLElBQUksS0FBSyxFQUFDO1FBQ3BCRixPQUFPLENBQUNDLEdBQUcsQ0FBQ0gsR0FBRyxDQUFDcUIsS0FBSyxDQUFDO1FBQ3RCLElBQUlDLEdBQUcsR0FBVXRCLEdBQUcsQ0FBQ3FCLEtBQUssQ0FBQ0MsR0FBRztRQUM5QnBCLE9BQU8sQ0FBQ0MsR0FBRyxDQUFDbUIsR0FBRyxDQUFDO1FBQ2hCLElBQUlkLElBQUksR0FBTyxNQUFNVixtRUFBYSxDQUFDO1lBQ3BDd0IsR0FBRyxFQUFDMUIsUUFBUSxDQUFDMkIsS0FBSyxDQUFDQyxRQUFRLENBQUNGLEdBQUcsQ0FBQztTQUNqQyxDQUFDO1FBQ0ZwQixPQUFPLENBQUNDLEdBQUcsQ0FBQ0ssSUFBSSxDQUFDO1FBQ2pCUCxHQUFHLENBQUNlLE1BQU0sQ0FBQyxHQUFHLENBQUMsQ0FBQ0MsSUFBSSxDQUFDO1lBQ3RCQyxLQUFLLEVBQUMsS0FBSztZQUNYQyxPQUFPLEVBQUMsVUFBVTtZQUNsQkMsSUFBSSxFQUFHWixJQUFJO1NBQ1QsQ0FBQztLQUNEO0NBQ0o7QUFJRCxNQUFNRixXQUFXLEdBQUcsQ0FBQ2MsSUFBUSxHQUFLO0lBQ2pDLE9BQU87UUFDTlYsS0FBSyxFQUFDVSxJQUFJLENBQUNLLFVBQVUsQ0FBQ2YsS0FBSztRQUMzQkksSUFBSSxFQUFHTSxJQUFJLENBQUNLLFVBQVUsQ0FBQ1gsSUFBSTtRQUMzQkMsUUFBUSxFQUFHSyxJQUFJLENBQUNLLFVBQVUsQ0FBQ1YsUUFBUTtRQUNuQ1csYUFBYSxFQUFHLFFBQVE7S0FDeEI7Q0FDRCIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3BhZ2VzL2FwaS91c2Vycy50cz84ODcyIl0sInNvdXJjZXNDb250ZW50IjpbImNvbnN0IG1vbmdvb3NlID0gcmVxdWlyZSgnbW9uZ29vc2UnKTtcbmltcG9ydCBVc2VycyBmcm9tICcuLy4uLy4uL21vZGVscy9Vc2Vycy5tb2RlbCc7XG5pbXBvcnQgZGJDb25uZWN0IGZyb20gJy4vLi4vLi4vdXRpbHMvZGJDb25uZWN0JztcblxuZGJDb25uZWN0KCk7XG4vLyBjaGFuZ2VzIG9ubHlcblxuZXhwb3J0IGRlZmF1bHQgYXN5bmMgKHJlcTphbnksIHJlczphbnkpID0+IHtcblx0IGNvbnNvbGUubG9nKFwiUmVxdWVzdCBpcyBjb21pbmcgaGVyZVwiKVxuICAgIGlmKHJlcS5tZXRob2QgPT0gXCJQT1NUXCIpe1xuICAgIFx0IGxldCB1c2VySW5mbzphbnkgPSBnZXRVc2VySW5mbyhyZXEuYm9keSlcbiAgICBcdCBjb25zb2xlLmxvZyh1c2VySW5mbylcblx0ICAgIGxldCB1c2VyOmFueSA9IGF3YWl0IFVzZXJzLmZpbmRPbmUoe1xuXHQgICAgXHRlbWFpbDp1c2VySW5mby5lbWFpbFxuXHQgICAgfSlcblx0ICAgIGlmKCF1c2VyKXtcbiAgICAgICAgICAgdXNlciA9IGF3YWl0IFVzZXJzLmluc2VydE9uZSh1c2VySW5mbylcblx0ICAgIH1lbHNle1xuXHQgICAgXHRhd2FpdCBVc2Vycy51cGRhdGVPbmUoe2VtYWlsOnVzZXJJbmZvLmVtYWlsfSx7XG5cdCAgICBcdFx0JHNldCA6e1xuXHQgICAgXHRcdFx0bmFtZSA6IHVzZXJJbmZvLm5hbWUsXG5cdCAgICBcdFx0XHRpbWFnZVVybCA6IHVzZXJJbmZvLmltYWdlVXJsXG5cdCAgICBcdFx0fVxuXHQgICAgXHR9KVxuXHQgICAgfVxuXHQgICAgY29uc29sZS5sb2coXCJ1c2VyXCIsdXNlcilcblx0XHQgcmVzLnN0YXR1cygyMDApLmpzb24oe1xuXHRcdFx0ZXJyb3I6ZmFsc2UsXG5cdFx0XHRtZXNzYWdlOlwiR290IHVzZXJcIixcblx0XHRcdGRhdGEgOiB1c2VyXG5cdFx0IH0pXG4gICAgfVxuXG4gICAgaWYocmVxLm1ldGhvZCA9PSBcIkdFVFwiKXtcbiAgICAgICBjb25zb2xlLmxvZyhyZXEucXVlcnkpXHRcbiAgICAgICBsZXQgX2lkOlN0cmluZyA9IHJlcS5xdWVyeS5faWQ7XG4gICAgICAgY29uc29sZS5sb2coX2lkKVxuICAgICAgIGxldCB1c2VyOmFueSA9IGF3YWl0IFVzZXJzLmZpbmRPbmUoe1xuXHQgICAgXHRfaWQ6bW9uZ29vc2UuVHlwZXMuT2JqZWN0SWQoX2lkKVxuXHQgICB9KVxuXHQgICBjb25zb2xlLmxvZyh1c2VyKVxuXHQgICByZXMuc3RhdHVzKDIwMCkuanNvbih7XG5cdFx0XHRlcnJvcjpmYWxzZSxcblx0XHRcdG1lc3NhZ2U6XCJHb3QgdXNlclwiLFxuXHRcdFx0ZGF0YSA6IHVzZXJcblx0ICAgfSlcbiAgICB9XG59XG5cblxuXG5jb25zdCBnZXRVc2VySW5mbyA9IChkYXRhOmFueSkgPT4ge1xuXHRyZXR1cm4ge1xuXHRcdGVtYWlsOmRhdGEucHJvZmlsZU9iai5lbWFpbCxcblx0XHRuYW1lIDogZGF0YS5wcm9maWxlT2JqLm5hbWUsXG5cdFx0aW1hZ2VVcmwgOiBkYXRhLnByb2ZpbGVPYmouaW1hZ2VVcmwsXG5cdFx0bG9naW5Qcm92aWRlciA6ICdnb29nbGUnXG5cdH1cdFxufSJdLCJuYW1lcyI6WyJtb25nb29zZSIsInJlcXVpcmUiLCJVc2VycyIsImRiQ29ubmVjdCIsInJlcSIsInJlcyIsImNvbnNvbGUiLCJsb2ciLCJtZXRob2QiLCJ1c2VySW5mbyIsImdldFVzZXJJbmZvIiwiYm9keSIsInVzZXIiLCJmaW5kT25lIiwiZW1haWwiLCJpbnNlcnRPbmUiLCJ1cGRhdGVPbmUiLCIkc2V0IiwibmFtZSIsImltYWdlVXJsIiwic3RhdHVzIiwianNvbiIsImVycm9yIiwibWVzc2FnZSIsImRhdGEiLCJxdWVyeSIsIl9pZCIsIlR5cGVzIiwiT2JqZWN0SWQiLCJwcm9maWxlT2JqIiwibG9naW5Qcm92aWRlciJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///(api)/./pages/api/users.ts\n");
 
-var connection = {};
-const connectionOptions = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-};
-async function dbConnect() {
-    if (connection.isConnected) {
-        console.log("Database Connected");
-        return;
-    }
-    const db = await (0,external_mongoose_.connect)("mongodb+srv://pushpendu:thesigmapassword@thesigma-mongodb-develo.ykgql.mongodb.net/thesigma?retryWrites=true&w=majority", connectionOptions);
-    connection.isConnected = db.connections[0].readyState;
-    console.log(db.connections[0]);
-    console.log("Database is connected : ", connection.isConnected);
-}
-/* harmony default export */ const utils_dbConnect = (dbConnect); // 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
- // wget https://aws-codedeploy-ap-east-1.s3.ap-east-1.amazonaws.com/latest/install
+/***/ }),
 
-;// CONCATENATED MODULE: ./pages/api/users.ts
-const users_mongoose = __webpack_require__(185);
+/***/ "(api)/./utils/dbConnect.ts":
+/*!****************************!*\
+  !*** ./utils/dbConnect.ts ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-
-utils_dbConnect();
-// changes only
-/* harmony default export */ const users = (async (req, res)=>{
-    console.log("Request is coming here");
-    if (req.method == "POST") {
-        let userInfo = getUserInfo(req.body);
-        console.log(userInfo);
-        let user = await Users_model.findOne({
-            email: userInfo.email
-        });
-        if (!user) {
-            user = await Users_model.insertOne(userInfo);
-        } else {
-            await Users_model.updateOne({
-                email: userInfo.email
-            }, {
-                $set: {
-                    name: userInfo.name,
-                    imageUrl: userInfo.imageUrl
-                }
-            });
-        }
-        console.log("user", user);
-        res.status(200).json({
-            error: false,
-            message: "Got user",
-            data: user
-        });
-    }
-    if (req.method == "GET") {
-        console.log(req.query);
-        let _id = req.query._id;
-        console.log(_id);
-        let user = await Users_model.findOne({
-            _id: users_mongoose.Types.ObjectId(_id)
-        });
-        console.log(user);
-        res.status(200).json({
-            error: false,
-            message: "Got user",
-            data: user
-        });
-    }
-});
-const getUserInfo = (data)=>{
-    return {
-        email: data.profileObj.email,
-        name: data.profileObj.name,
-        imageUrl: data.profileObj.imageUrl,
-        loginProvider: "google"
-    };
-};
-
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! mongoose */ \"mongoose\");\n/* harmony import */ var mongoose__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(mongoose__WEBPACK_IMPORTED_MODULE_0__);\n\nvar connection = {};\nconst connectionOptions = {\n    useNewUrlParser: true,\n    useUnifiedTopology: true\n};\nasync function dbConnect() {\n    if (connection.isConnected) {\n        console.log(\"Database Connected\");\n        return;\n    }\n    const db = await (0,mongoose__WEBPACK_IMPORTED_MODULE_0__.connect)(\"mongodb+srv://pushpendu:thesigmapassword@thesigma-mongodb-develo.ykgql.mongodb.net/thesigma?retryWrites=true&w=majority\", connectionOptions);\n    connection.isConnected = db.connections[0].readyState;\n    console.log(db.connections[0]);\n    console.log(\"Database is connected : \", connection.isConnected);\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (dbConnect); // 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\n // wget https://aws-codedeploy-ap-east-1.s3.ap-east-1.amazonaws.com/latest/install\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiKGFwaSkvLi91dGlscy9kYkNvbm5lY3QudHMuanMiLCJtYXBwaW5ncyI6Ijs7Ozs7O0FBQWtEO0FBRWxELElBQUlDLFVBQVUsR0FBTyxFQUFFO0FBQ3ZCLE1BQU1DLGlCQUFpQixHQUFHO0lBQ3hCQyxlQUFlLEVBQUMsSUFBSTtJQUNwQkMsa0JBQWtCLEVBQUMsSUFBSTtDQUN4QjtBQUVELGVBQWVDLFNBQVMsR0FBRztJQUMxQixJQUFHSixVQUFVLENBQUNLLFdBQVcsRUFBQztRQUN2QkMsT0FBTyxDQUFDQyxHQUFHLENBQUMsb0JBQW9CLENBQUM7UUFDOUIsT0FBTztLQUNaO0lBRUQsTUFBTUMsRUFBRSxHQUFHLE1BQU1ULGlEQUFPLENBQUNVLHlIQUFvQixFQUFDUixpQkFBaUIsQ0FBbUI7SUFFbEZELFVBQVUsQ0FBQ0ssV0FBVyxHQUFHRyxFQUFFLENBQUNJLFdBQVcsQ0FBQyxDQUFDLENBQUMsQ0FBQ0MsVUFBVSxDQUFDO0lBQ3REUCxPQUFPLENBQUNDLEdBQUcsQ0FBQ0MsRUFBRSxDQUFDSSxXQUFXLENBQUMsQ0FBQyxDQUFDLENBQUM7SUFDOUJOLE9BQU8sQ0FBQ0MsR0FBRyxDQUFDLDBCQUEwQixFQUFDUCxVQUFVLENBQUNLLFdBQVcsQ0FBQztDQUM5RDtBQUVELGlFQUFlRCxTQUFTLEVBQUMsQ0FFekIsMkNBQTJDO0NBRTNDLGtGQUFrRiIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL3V0aWxzL2RiQ29ubmVjdC50cz81NDlkIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGNvbm5lY3QsQ29ubmVjdE9wdGlvbnMgfSBmcm9tICdtb25nb29zZSc7XG5cbnZhciBjb25uZWN0aW9uOmFueSA9IHt9O1xuY29uc3QgY29ubmVjdGlvbk9wdGlvbnMgPSB7XG5cdFx0dXNlTmV3VXJsUGFyc2VyOnRydWUsXG5cdFx0dXNlVW5pZmllZFRvcG9sb2d5OnRydWVcbn1cblxuYXN5bmMgZnVuY3Rpb24gZGJDb25uZWN0KCkge1xuXHRpZihjb25uZWN0aW9uLmlzQ29ubmVjdGVkKXtcblx0ICAgY29uc29sZS5sb2coXCJEYXRhYmFzZSBDb25uZWN0ZWRcIikgXHRcbiAgICAgICByZXR1cm47XG5cdH1cblxuXHRjb25zdCBkYiA9IGF3YWl0IGNvbm5lY3QocHJvY2Vzcy5lbnYubW9uZ291cmksY29ubmVjdGlvbk9wdGlvbnMgYXMgQ29ubmVjdE9wdGlvbnMpO1xuXG5cdGNvbm5lY3Rpb24uaXNDb25uZWN0ZWQgPSBkYi5jb25uZWN0aW9uc1swXS5yZWFkeVN0YXRlO1xuXHRjb25zb2xlLmxvZyhkYi5jb25uZWN0aW9uc1swXSlcblx0Y29uc29sZS5sb2coXCJEYXRhYmFzZSBpcyBjb25uZWN0ZWQgOiBcIixjb25uZWN0aW9uLmlzQ29ubmVjdGVkKVxufVxuXG5leHBvcnQgZGVmYXVsdCBkYkNvbm5lY3Q7XG5cbi8vIGdocF9reTZKeWdoWEh3eEVoQjBqVHZMd2VYV0t3YzV3QksyTXpaSjZcblxuLy8gd2dldCBodHRwczovL2F3cy1jb2RlZGVwbG95LWFwLWVhc3QtMS5zMy5hcC1lYXN0LTEuYW1hem9uYXdzLmNvbS9sYXRlc3QvaW5zdGFsbCJdLCJuYW1lcyI6WyJjb25uZWN0IiwiY29ubmVjdGlvbiIsImNvbm5lY3Rpb25PcHRpb25zIiwidXNlTmV3VXJsUGFyc2VyIiwidXNlVW5pZmllZFRvcG9sb2d5IiwiZGJDb25uZWN0IiwiaXNDb25uZWN0ZWQiLCJjb25zb2xlIiwibG9nIiwiZGIiLCJwcm9jZXNzIiwiZW52IiwibW9uZ291cmkiLCJjb25uZWN0aW9ucyIsInJlYWR5U3RhdGUiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///(api)/./utils/dbConnect.ts\n");
 
 /***/ })
 
@@ -123,7 +60,7 @@ const getUserInfo = (data)=>{
 var __webpack_require__ = require("../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = (__webpack_exec__(440));
+var __webpack_exports__ = (__webpack_exec__("(api)/./pages/api/users.ts"));
 module.exports = __webpack_exports__;
 
 })();

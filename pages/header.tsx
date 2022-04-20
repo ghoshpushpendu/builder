@@ -4,11 +4,12 @@ import React, { useRef,useState, useEffect } from 'react';
 import ProfileDropdown from "./components/dropdown/profileDropdown";
 import logo from "./../public/images/IMG_4867.png";
 import { useRouter } from "next/router";
+import Loader from "./components/loader/index";
 
-function Header(props) {
+function Header(props:any) {
     const [user,setUser] = useState(null) 
     const router = useRouter();
-
+    console.log(props.title) 
     const gotoHomePage = () => {
         router.push("/")
     }
@@ -17,14 +18,14 @@ function Header(props) {
       router.push("/auth/login")
     }
 
-    const getProfile = async (_id) => {
+    const getProfile = async (_id:any) => {
        const response = await axios.get('/api/users?_id='+_id);
        console.log(response.data.data)
        setUser(response.data.data?response.data.data:null)
     }
 
 
-    useEffect(() => {
+    useEffect(() => { 
       // Update the document title using the browser API
       if(localStorage.getItem("_id") != undefined && localStorage.getItem("_id") != null){
         getProfile(localStorage.getItem("_id"))
@@ -35,12 +36,13 @@ function Header(props) {
 
     return (
         <nav className="navbar header ps-3 pe-3">
+            <Loader></Loader>
             <div className="navbar-brand brand float-start" onClick={() => { gotoHomePage() }}>
-                <img src={logo.src} width="40" height="40" className="d-inline-block align-top logo" alt="" />
-                <span className="align-middle">{(props.title != null && props.title != undefined ) ? props.title : "Home"}</span>
+                <img src={logo.src} width="35" height="35" className="d-inline-block align-top logo" alt="" />
+                <span className="align-middle">{(props.title != null && props.title != undefined && !props.title.includes("undefined") ) ? props.title : "Home"}</span>
             </div>
             <Head>
-                <title>The Sigma | {(props.title != null && props.title != undefined ) ? props.title : "Empowering Innovations"}</title>
+                <title>The Sigma | {(props.title != null && props.title != undefined && !props.title.includes("undefined") ) ? props.title : "Empowering Innovations"}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
                 <link href="/css/common.css" rel="stylesheet" />
                 <link rel="icon" href={logo.src} />
@@ -53,8 +55,7 @@ function Header(props) {
                     </div>
                 ) : (
                     <div className="float-end text-center" role="button" onClick={()=>{gotoLoginPage()}}>
-                        <img src="https://d11a6trkgmumsb.cloudfront.net/original/3X/d/8/d8b5d0a738295345ebd8934b859fa1fca1c8c6ad.jpeg" alt="Avatar" className="avatar"/>
-                        <div>Please Login ?</div>
+                      Please Login ?
                     </div>
                 )
             }

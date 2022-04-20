@@ -1,7 +1,7 @@
 import Projects from "./../models/Projects.model";
 
 class ProjectsController {
-   handleRequests = async (req,res) => {
+   handleRequests = async (req:any,res:any) => {
    	console.log("Handling Project Requests")
      if(req.method == "POST"){
          return await this.createProject(req,res);
@@ -11,10 +11,10 @@ class ProjectsController {
    }
 
    // create project
-   createProject = async (req,res) => {
+   createProject = async (req:any,res:any) => {
        let projectData = req.body;
        let projectDocument = new Projects(projectData)
-       projectDocument.save((error,success)=>{
+       projectDocument.save((error:any,success:any)=>{
        	if(error){
             res.status(200).json({
             	error:true,
@@ -32,7 +32,7 @@ class ProjectsController {
    }
 
    // get project(s)
-   getProjects = async (req,res) => {
+   getProjects = async (req:any,res:any) => {
        let userId = req.query.userId; // projects of a user
        console.log(userId)
        let query = {
@@ -66,7 +66,7 @@ class ProjectsController {
        }
    }
 
-   handleSingleProject = async (req,res) => {
+   handleSingleProject = async (req:any,res:any) => {
     console.log("Handling Project Requests")
      if(req.method == "POST"){
          return await this.updateProject(req,res);
@@ -75,9 +75,9 @@ class ProjectsController {
      }
    }
 
-   updateProject = async (req,res) => {}
+   updateProject = async (req:any,res:any) => {}
 
-   getProject = async (req,res) => {
+   getProject = async (req:any,res:any) => {
        console.log(req.url)
        let projectId = req.url.split("/")[req.url.split("/").length - 1]
        console.log(projectId)

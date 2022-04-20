@@ -32,7 +32,7 @@ var usersSchema = new Schema({
     imageUrl: String,
     loginProvider: Number
 });
-/* harmony default export */ const Users_model = (mongoose.models.Users || mongoose.model('Users', usersSchema));
+/* harmony default export */ const Users_model = (mongoose.models.Users || mongoose.model("Users", usersSchema));
 
 // EXTERNAL MODULE: external "mongoose"
 var external_mongoose_ = __webpack_require__(185);
@@ -109,7 +109,7 @@ const getUserInfo = (data)=>{
         email: data.profileObj.email,
         name: data.profileObj.name,
         imageUrl: data.profileObj.imageUrl,
-        loginProvider: 'google'
+        loginProvider: "google"
     };
 };
 

@@ -25,14 +25,14 @@ function Start() {
     },[])
 
     return (<div className="container-fluid applist">
-        <div className="row mt-5 ms-3">
+        <div className="row gx-3 mt-5 ms-3">
             {
                 projects && projects.map((project,i)=>{
                     return (
-                        <div className='col app' key={i} onClick={()=>{
+                        <div className='col-md-3 app' key={i} onClick={()=>{
                             goToProject(project._id)
                         }}>
-                            <div className="card" style={{ width: "15rem" }}>
+                            <div className="card p-3">
                                 <div className="card-body">
                                     <h5 className="card-title">{project.name}</h5>
                                     <p className="card-text">Type : {project.projectType}</p>
@@ -43,8 +43,8 @@ function Start() {
                     );
                 })
             }
-            <div className='col'>
-                <div className="card" style={{ width: "15rem" }} onClick={()=>{goToCreateApp()}}>
+            <div className='col-md-3'>
+                <div className="card p-3" onClick={()=>{goToCreateApp()}}>
                     <i className="bi bi-plus-square-dotted text-center mt-3"></i>
                     <div className="card-body">
                         <h5 className="card-title">Create Application</h5>

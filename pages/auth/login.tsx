@@ -7,38 +7,27 @@ import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Footer from "./../footer"
 import { useRouter } from "next/router";
+import Loader from "./../components/loader/index"
 
 function Login() {
-    const ref = useRef(null);
     const router = useRouter();
 
     const gotoHome = () => {
         window.location.href = "/"
     }
 
-    const responseGoogle = (response) => {
+    const responseGoogle = (response:any) => {
       console.log(response);
       if(!response.error){
           authenticate(response)
       }
-      completeLoadingBar();
     }
 
     const LoadFinished = () => {
-        completeLoadingBar();
-    }
-
-    const startLoadingBar = () => {
-        ref.current.continuousStart()
-    }
-
-    const completeLoadingBar = () => {
-        ref.current.complete()
     }
 
       useEffect(() => {
         // Update the document title using the browser API
-         startLoadingBar()
          console.log(localStorage.getItem("_id") === null,"ID")
          if(localStorage.getItem("_id") != undefined && localStorage.getItem("_id") != null){
            gotoHome()
@@ -46,7 +35,7 @@ function Login() {
       });
 
     /**  Authenticate using google and mongodb  **/
-    const authenticate = async (data) => {
+    const authenticate = async (data:any) => {
       const response = await axios.post('/api/users', data);
       console.log(response.data.data._id)
       localStorage.setItem("_id",response.data.data._id);
@@ -56,6 +45,7 @@ function Login() {
 
     return (
         <div>
+            <Loader></Loader>
             <Head>
                 <link rel="icon" href="./../../images/IMG_4870.PNG" />
                 <title>The Sigma | Login</title>
@@ -63,7 +53,6 @@ function Login() {
                 <link href="./../../css/common.css" rel="stylesheet" />
             </Head>
             <div className="container-fluid">
-               <LoadingBar height={5} color="#4d61fc" ref={ref} />
                <div className="text-center mt-5 loginButtonHolder">
                                   <GoogleLogin
                                     clientId="259083905478-9vs3cimdg8n1ktrdla6cu5iavp3879qd.apps.googleusercontent.com"

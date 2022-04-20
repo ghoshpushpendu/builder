@@ -30,7 +30,10 @@ var profileDropdown = __webpack_require__(349);
 /* harmony default export */ const IMG_4867 = ({"src":"/_next/static/media/IMG_4867.c5235fad.png","height":500,"width":500,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAQAAABuBnYAAAAAYElEQVR42kXLsQmEQAAF0dk7zrvojMUKBEG0GJsz0AIMxQrUsnZk2UA+TPDhES58RcR36gX+xL+D5NURJw9XF7GKfMXO3dE2MSnExs3RLh8PmTPBQiztxSDCiSEiflKPGwplSAZa6QaGAAAAAElFTkSuQmCC"});
 // EXTERNAL MODULE: external "next/router"
 var router_ = __webpack_require__(853);
+// EXTERNAL MODULE: ./pages/components/loader/index.tsx
+var loader = __webpack_require__(535);
 ;// CONCATENATED MODULE: ./pages/header.tsx
+
 
 
 
@@ -41,6 +44,7 @@ var router_ = __webpack_require__(853);
 function Header(props) {
     const { 0: user , 1: setUser  } = (0,external_react_.useState)(null);
     const router = (0,router_.useRouter)();
+    console.log(props.title);
     const gotoHomePage = ()=>{
         router.push("/");
     };
@@ -48,7 +52,7 @@ function Header(props) {
         router.push("/auth/login");
     };
     const getProfile = async (_id)=>{
-        const response = await external_axios_default().get('/api/users?_id=' + _id);
+        const response = await external_axios_default().get("/api/users?_id=" + _id);
         console.log(response.data.data);
         setUser(response.data.data ? response.data.data : null);
     };
@@ -63,6 +67,7 @@ function Header(props) {
     return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("nav", {
         className: "navbar header ps-3 pe-3",
         children: [
+            /*#__PURE__*/ jsx_runtime_.jsx(loader["default"], {}),
             /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
                 className: "navbar-brand brand float-start",
                 onClick: ()=>{
@@ -71,14 +76,14 @@ function Header(props) {
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx("img", {
                         src: IMG_4867.src,
-                        width: "40",
-                        height: "40",
+                        width: "35",
+                        height: "35",
                         className: "d-inline-block align-top logo",
                         alt: ""
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("span", {
                         className: "align-middle",
-                        children: props.title != null && props.title != undefined ? props.title : "Home"
+                        children: props.title != null && props.title != undefined && !props.title.includes("undefined") ? props.title : "Home"
                     })
                 ]
             }),
@@ -87,7 +92,7 @@ function Header(props) {
                     /*#__PURE__*/ (0,jsx_runtime_.jsxs)("title", {
                         children: [
                             "The Sigma | ",
-                            props.title != null && props.title != undefined ? props.title : "Empowering Innovations"
+                            props.title != null && props.title != undefined && !props.title.includes("undefined") ? props.title : "Empowering Innovations"
                         ]
                     }),
                     /*#__PURE__*/ jsx_runtime_.jsx("meta", {
@@ -115,22 +120,13 @@ function Header(props) {
                 children: /*#__PURE__*/ jsx_runtime_.jsx(profileDropdown["default"], {
                     user: user
                 })
-            }) : /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+            }) : /*#__PURE__*/ jsx_runtime_.jsx("div", {
                 className: "float-end text-center",
                 role: "button",
                 onClick: ()=>{
                     gotoLoginPage();
                 },
-                children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                        src: "https://d11a6trkgmumsb.cloudfront.net/original/3X/d/8/d8b5d0a738295345ebd8934b859fa1fca1c8c6ad.jpeg",
-                        alt: "Avatar",
-                        className: "avatar"
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                        children: "Please Login ?"
-                    })
-                ]
+                children: "Please Login ?"
             })
         ]
     });

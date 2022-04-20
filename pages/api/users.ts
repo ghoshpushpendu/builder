@@ -5,7 +5,7 @@ import dbConnect from './../../utils/dbConnect';
 dbConnect();
 // changes only
 
-export default async (req, res) => {
+export default async (req:any, res:any) => {
 	 console.log("Request is coming here")
     if(req.method == "POST"){
     	 let userInfo:any = getUserInfo(req.body)

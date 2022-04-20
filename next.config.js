@@ -5,5 +5,5 @@ module.exports = {
 	    google_client_secret: "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"
 	},
 	webpack5: true,
-	reactStrictMode: true,
+	reactStrictMode: true
 }

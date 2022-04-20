@@ -29,7 +29,7 @@ function Start() {
         router.push("/module/createapp");
     };
     const getProjects = async ()=>{
-        let response = await axios__WEBPACK_IMPORTED_MODULE_1___default().get('/api/projects?userId=' + localStorage.getItem("_id"));
+        let response = await axios__WEBPACK_IMPORTED_MODULE_1___default().get("/api/projects?userId=" + localStorage.getItem("_id"));
         console.log(response.data.data);
         setProjects(response.data.data);
     };
@@ -42,19 +42,16 @@ function Start() {
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         className: "container-fluid applist",
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-            className: "row mt-5 ms-3",
+            className: "row gx-3 mt-5 ms-3",
             children: [
                 projects && projects.map((project, i)=>{
                     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: "col app",
+                        className: "col-md-3 app",
                         onClick: ()=>{
                             goToProject(project._id);
                         },
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                            className: "card",
-                            style: {
-                                width: "15rem"
-                            },
+                            className: "card p-3",
                             children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                 className: "card-body",
                                 children: [
@@ -79,12 +76,9 @@ function Start() {
                     }, i);
                 }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: "col",
+                    className: "col-md-3",
                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: "card",
-                        style: {
-                            width: "15rem"
-                        },
+                        className: "card p-3",
                         onClick: ()=>{
                             goToCreateApp();
                         },

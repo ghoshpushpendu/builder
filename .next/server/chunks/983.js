@@ -50,7 +50,7 @@ var projectsSchema = new Schema({
         }
     ] // users who can perform tasks in this project
 });
-/* harmony default export */ const Projects_model = (mongoose.models.Projects || mongoose.model('Projects', projectsSchema));
+/* harmony default export */ const Projects_model = (mongoose.models.Projects || mongoose.model("Projects", projectsSchema));
 
 ;// CONCATENATED MODULE: ./controllers/Projects.controller.ts
 

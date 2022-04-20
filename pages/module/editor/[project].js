@@ -5,6 +5,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import BootstrapEditor from "./../../components/bootstrap/editor"
 
 function Project(){
     const router = useRouter();
@@ -28,8 +29,9 @@ function Project(){
 	return(
      <div>
      	<Header title={projectObject.name+" ("+projectObject.projectType+")"}></Header>
-     	<div className="container-fluid">Hi ! Here you ll be able to design the project very shortly.</div>
-     	<Footer></Footer>
+     	<div>
+          <BootstrapEditor></BootstrapEditor>  
+        </div>
      </div>
 	)
 }

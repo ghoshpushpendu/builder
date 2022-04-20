@@ -23,22 +23,36 @@ function ProfileDropdown(props) {
         localStorage.clear();
         router.push("/auth/login");
     };
+    const replaceImage = (e)=>{
+        e.target.src = "https://d11a6trkgmumsb.cloudfront.net/original/3X/d/8/d8b5d0a738295345ebd8934b859fa1fca1c8c6ad.jpeg";
+    };
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
         className: "dropstart",
         children: [
-            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 "data-bs-toggle": "dropdown",
                 "aria-expanded": "false",
-                children: [
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                        src: props === null || props === void 0 ? void 0 : (ref = props.user) === null || ref === void 0 ? void 0 : ref.imageUrl,
-                        alt: "Avatar",
-                        className: "avatar"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        children: props === null || props === void 0 ? void 0 : (ref1 = props.user) === null || ref1 === void 0 ? void 0 : ref1.name
-                    })
-                ]
+                children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                    children: [
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
+                                src: props === null || props === void 0 ? void 0 : (ref = props.user) === null || ref === void 0 ? void 0 : ref.imageUrl,
+                                onError: (e)=>{
+                                    replaceImage(e);
+                                },
+                                alt: "Avatar",
+                                className: "avatar"
+                            })
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                            style: {
+                                marginTop: "4px",
+                                marginLeft: "5px"
+                            },
+                            children: props === null || props === void 0 ? void 0 : (ref1 = props.user) === null || ref1 === void 0 ? void 0 : ref1.name
+                        })
+                    ]
+                })
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("ul", {
                 className: "dropdown-menu",

@@ -1,9 +1,31 @@
 This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 
-Changes Made -> Now
+This application is build on top of next.js and prototype version of actual concept.
 
-Changes Again -> ABC
+This application is still under development.
 
-CodeDeploy agent was not able to receive the lifecycle event. Check the CodeDeploy agent logs on your host and make sure the agent is running and can connect to the CodeDeploy server.
+To run this application -> 
 
-OK
+Clone the repository 
+
+npm install 
+
+npm run dev
+
+and open http://localhost:3000 on your favourite browser to see the app builder in action.
+
+See the hosted version of the application at http://thesigma.online 
+
+
+Any Collaboraots are most welcome.
+
+contact -> contactpushpendu@gmail.com to know more.
+
+Major Dependencies -> 
+
+Node JS 
+Next JS 
+Grapes JS 
+React 
+Express 
+Bootstrap 5

@@ -25,11 +25,11 @@ function Start() {
     },[])
 
     return (<div className="container-fluid applist">
-        <div className="row gx-3 mt-5 ms-3">
+        <div className="row gx-3 mt-4 ms-3">
             {
                 projects && projects.map((project,i)=>{
                     return (
-                        <div className='col-md-3 app' key={i} onClick={()=>{
+                        <div className='col-md-3 mb-3 me-3 app' key={i} onClick={()=>{
                             goToProject(project._id)
                         }}>
                             <div className="card p-3">
@@ -43,7 +43,7 @@ function Start() {
                     );
                 })
             }
-            <div className='col-md-3'>
+            <div className='col-md-3 app-create'>
                 <div className="card p-3" onClick={()=>{goToCreateApp()}}>
                     <i className="bi bi-plus-square-dotted text-center mt-3"></i>
                     <div className="card-body">

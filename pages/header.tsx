@@ -39,7 +39,7 @@ function Header(props:any) {
             <Loader></Loader>
             <div className="navbar-brand brand float-start" onClick={() => { gotoHomePage() }}>
                 <img src={logo.src} width="35" height="35" className="d-inline-block align-top logo" alt="" />
-                <span className="align-middle">{(props.title != null && props.title != undefined && !props.title.includes("undefined") ) ? props.title : "Home"}</span>
+                <span className="align-middle">{(props.title != null && props.title != undefined && !props.title.includes("undefined") ) ? props.title : "My Applications"}</span>
             </div>
             <Head>
                 <title>The Sigma | {(props.title != null && props.title != undefined && !props.title.includes("undefined") ) ? props.title : "Empowering Innovations"}</title>

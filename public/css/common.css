@@ -73,6 +73,14 @@ body {
   box-sizing: border-box;
 }
 
+.applist .app{
+  max-width: 350px;
+}
+
+.applist .app-create{
+  max-width: 350px;
+}
+
 .applist .app .card{
   background-color: lightcyan !important;
 }
@@ -262,3 +270,82 @@ h5 {
   height: auto;
   min-height: auto;
 }
+
+.panel {
+    width: 90%;
+    max-width: 700px;
+    border-radius: 3px;
+    padding: 30px 20px;
+    margin: 150px auto 0px;
+    background-color: #d983a6;
+    box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.25);
+    color:rgba(255,255,255,0.75);
+    font: caption;
+    font-weight: 100;
+}
+
+.custom_panel__top {
+  padding: 0 !important;
+  position: absolute; !important;
+  left: 280px;
+  z-index: 9 !important;
+}
+.panel__basic-actions {
+  position: initial;
+}
+
+.sidebar{
+  width: 150px;
+  height: 100vh;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+}
+
+.sidebar-header {
+  position: relative;
+  top: 0px;
+  width: 100%;
+  height: 43px;
+  background-color: #444;
+  color: white;
+  text-align: left;
+  font: caption;
+  vertical-align: middle;
+}
+
+.sidebar-header p{
+  padding-top: 12px !important;
+  padding-left: 10px;
+  margin-bottom: 1rem;
+}
+
+.editor{
+    position: absolute;
+    left: 150px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    width: auto !important;
+    height: auto !important;
+}
+
+.componentAddICON{
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.sidebar-content{
+  max-height: 45vh;
+  overflow-x: auto;
+  font-family: times;
+}
+
+.sidebar-item{
+  cursor: pointer;
+}
+
+
+/* We can remove the border we've set at the beginnig */
+

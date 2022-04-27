@@ -28,9 +28,8 @@ function Project(){
 
 	return(
      <div>
-     	<Header title={projectObject.name+" ("+projectObject.projectType+")"}></Header>
      	<div>
-          <BootstrapEditor></BootstrapEditor>  
+        {projectObject.name ? <BootstrapEditor project={projectObject}></BootstrapEditor>  : null}
         </div>
      </div>
 	)
